@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Author: Sarifou DIALLO
 # Date : May 21, 2023
 
@@ -76,7 +77,7 @@ def generate_launch_description():
         package='robot_state_publisher',
         executable='robot_state_publisher',
         parameters=[{'use_sim_time' : use_sim_time,
-                     'robot_description' : Command(['xacro', urdf_model])}],
+                     'robot_description' : Command(['xacro ', urdf_model])}],
         arguments=[urdf_path]
     )
     # Launch RVIZ

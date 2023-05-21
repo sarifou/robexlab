@@ -22,7 +22,7 @@
             <material name="white"/>
         </visual>
     </link>
-    <joint name="base_link_wheel_front_right" type="continuous">
+    <joint name="base_link_wheel_front_right" type="fixed">
         <parent link="base_link"/>
         <child link="wheel_front_right"/>
         <origin xyz="0.18 0.12 0.0" rpy="1.57 0.0 0.0"/>
