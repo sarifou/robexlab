@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="primius">
+
+    <!-- "Include all properties to build the urdf"> -->
+    <xacro:include filename="properties.xacro"/>
+
+    <!-- Include the palet color -->
+    <xacro:include filename="color.xacro"/>
+
+    <link name="base_footprint"/>
+
+    <link name="base_link">
+        <visual>
+        <geometry>
+                <mesh filename="package://visualization/meshes/base_test.stl"/>
+        </geometry>
+        <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="base_footprint_base_link" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 ${wheel_radius}" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+
+    <link name="wheel_front_right">
+        <visual>
+            <geometry>
+                <mesh filename="package://visualization/meshes/mecanum_wheel.stl" scale="0.01 0.01 0.01"/>
+            </geometry>
+            <material name="white"/>
+            <origin xyz="0.0 0.0 0.0" rpy="${pi/2} 0.0 0.0"/>
+        </visual>
+    </link>
+    <joint name="base_link_wheel_front_right" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_front_right"/>
+        <origin xyz="0.18 0.12 -${wheel_radius}" rpy="0.0 0.0 0.0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+</robot>

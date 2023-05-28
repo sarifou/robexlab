@@ -22,7 +22,7 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 install(
-  DIRECTORY config launch ../models
+  DIRECTORY config launch ../models meshes
   DESTINATION share/${PROJECT_NAME}
 )
 

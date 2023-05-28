@@ -18,7 +18,7 @@ def generate_launch_description():
     # Set the path of the rviz configuration settings
     rviz_config_path = os.path.join(pkg_path, 'config/basic.rviz')
     # Set the path of urdf file
-    urdf_path =  os.path.join(pkg_path, 'models/primius.urdf')
+    urdf_path =  os.path.join(pkg_path, 'models/xacro/primius.urdf.xacro')
     # Specific variable for urdf model
     gui = LaunchConfiguration('gui')
     urdf_model = LaunchConfiguration('urdf_model')
